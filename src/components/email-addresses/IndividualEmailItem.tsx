@@ -5,7 +5,7 @@ const IndividualEmailItem = ({ recipient, onClick }: {
   onClick: (recipient: Recipient) => void;
 }) => {
   return (
-    <Box pad="6px 8px" hoverIndicator onClick={() => onClick(recipient)}>
+    <Box pad="4px 8px" hoverIndicator onClick={() => onClick(recipient)}>
       {recipient.email}
     </Box>
   );

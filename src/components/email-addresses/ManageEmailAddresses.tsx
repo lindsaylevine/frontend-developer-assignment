@@ -12,17 +12,21 @@ import IndividualEmailItem from './IndividualEmailItem';
  * an array of selected email adddresses separate from the supplied recipients (meaning Recipient wouldn't need an isSelected property),
  * but I felt like since it was included in the JSON, I should expand off of that.
  * - I *think* I interpreted the mockup and selection UX correctly for company domains vs individual email addresses, but
- * I'm not 1000% sure because I do think the UX is a little confusing? o_O I understand the value of building it this way for
+ * I'm not entirely sure because I do think the UX is a little confusing? o_O I understand the value of building it this way for
  * the sake of the exercise and the challenge of composing the logic, but I'm not sure I otherwise see the value in splitting
- * up the addresses between domains and individual. For example, why not just have *only* domains with the full emails under it,
- * even if there's only one full email address for that domain? That way addresses aren't bouncing in and out of the different groups
- * as you select and unselect. Hopefully that makes sense :'D.
+ * up the addresses between domains and individual. In other words, why not just have *only* domains with the full emails under it,
+ * even if there's only one full email address for that domain, rather than splitting into the two groups? That way addresses aren't
+ * bouncing in and out of the different groups as you select and unselect. Hopefully that makes sense :'D.
  * - I originally built it to support expanding and collapsing domain groups (on top of the Company and Individual selection groups)
- * but (1) felt like that was an unnecessary UX on the available side (2) it made for a weird UX challenge since we want clicking a domain
- * to select all of its email addresses (3) the instructions only explicitly asked for the two selected groups to be expandable, and the nested expandability
- * on that side felt like weird UX.
+ * but (1) it made for a weird UX challenge since we want clicking a domain to select all of its email addresses (2) the instructions
+ * only explicitly asked for the two _selected_ groups to be expandable, and the nested expandability on that side in the Company Recipients
+ * group felt like weird UX. I'm replacing the caret next to the domain name (which is in the mockup) because it implies expandability
+ * that doesn't exist.
+ * - I just threw the Recipient type in index.d.ts since it was there already, otherwise, depending on the team's preference, I'd export
+ * it from a types file and import everywhere where used. My last job only ever used .d.ts files but some folks don't like that O_O.
  * 
- * Potential improvements:
+ * Potential improvements if this was a real project:
+ * - Mobile responsive (I would've maybe used Tailwind if there was an emphasis on that in the instructions)
  * - Fuzzy search or better search query matching than just includes
  *    - if you type john@timescale.com should that domain group stay visible?
  * - Making some styling props more DRY
@@ -30,6 +34,7 @@ import IndividualEmailItem from './IndividualEmailItem';
  * - Empty + error states
  * - Expand selected groups when selections are made or collapse when the last selection is unselected
  * - Allow enter key in input to add new recipient when email is valid
+ * - Prevent allowing duplicate recipients
  */
 
 const ManageEmailAddresses = () => {
@@ -90,7 +95,7 @@ const ManageEmailAddresses = () => {
             value={recipientSearchQuery}
             onChange={(event: React.ChangeEvent<HTMLInputElement>) => setRecipientSearchQuery(event.target.value)}
             icon={<Search size="16px" color="#000" />}
-            size="16px"
+            size="14px"
             style={{ fontWeight: 'normal' }}
             placeholder="Search" />
           {isValidEmailInSearchQuery && (
@@ -123,7 +128,7 @@ const ManageEmailAddresses = () => {
             margin={{ bottom: '8px '}}
           >
             {shouldExpandSelectedCompanyDomains ? <CaretDownFill color="#000" /> : <CaretRightFill color="#000" />}
-            <Text size="16px" weight="bold">
+            <Text size="14px" weight="bold">
               Company Recipients
             </Text>
           </Box>
@@ -146,7 +151,7 @@ const ManageEmailAddresses = () => {
             onClick={() => setShouldExpandSelectedIndividualEmails(!shouldExpandSelectedIndividualEmails)}
           >
             {shouldExpandSelectedIndividualEmails ? <CaretDownFill color="#000" /> : <CaretRightFill color="#000" />}
-            <Text size="16px" weight="bold">
+            <Text size="14px" weight="bold">
               Email Recipients
             </Text>
           </Box>

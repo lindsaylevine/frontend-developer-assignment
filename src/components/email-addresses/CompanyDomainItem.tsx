@@ -1,5 +1,5 @@
 import { Box } from 'grommet';
-import { CaretDownFill } from 'grommet-icons';
+import { MailOption } from 'grommet-icons';
 import IndividualEmailItem from './IndividualEmailItem';
 
 const CompanyDomainItem = ({ domain, recipients, onDomainClick, onRecipientClick }: {
@@ -10,8 +10,8 @@ const CompanyDomainItem = ({ domain, recipients, onDomainClick, onRecipientClick
 }) => {
   return (
     <Box>
-      <Box pad="2px 4px" align="center" direction="row" hoverIndicator onClick={() => onDomainClick(recipients)}>
-        <CaretDownFill color="#000" />
+      <Box pad="4px 4px" gap="6px" align="center" direction="row" hoverIndicator onClick={() => onDomainClick(recipients)}>
+        <MailOption color="#000" size="14px" />
         {domain}
       </Box>
       <Box pad={{ left: '24px' }}>
