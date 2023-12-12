@@ -4,3 +4,8 @@ declare module "*.svg" {
   const src: string;
   export default src;
 }
+
+interface Recipient {
+  email: string;
+  isSelected: boolean;
+}
