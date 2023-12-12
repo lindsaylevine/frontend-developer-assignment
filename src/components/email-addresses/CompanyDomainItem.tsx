@@ -10,7 +10,7 @@ const CompanyDomainItem = ({ domain, recipients, onDomainClick, onRecipientClick
 }) => {
   return (
     <Box>
-      <Box align="center" direction="row" hoverIndicator onClick={() => onDomainClick(recipients)}>
+      <Box pad="2px 4px" align="center" direction="row" hoverIndicator onClick={() => onDomainClick(recipients)}>
         <CaretDownFill color="#000" />
         {domain}
       </Box>

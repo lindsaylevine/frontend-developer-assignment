@@ -25,3 +25,8 @@ export const splitCompanyDomainsAndIndividuals = (recipients: Recipient[]): {
 
   return { companyDomains, individualEmailAddresses };
 };
+
+export const validateEmailAddress = (emailAddress: string): boolean => {
+  const emailRegex: RegExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(emailAddress);
+};
