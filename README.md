@@ -1,33 +1,4 @@
-# Timescale Frontend Programming Assignment
+hello! please check out the open PR or my branch `dev`. :)
 
-Thank you for taking the time to apply for a frontend position at Timescale!
-We hope you'll enjoy this small coding assignment that was designed to illustrate your coding skills. It should take around
-3 hours to complete at a time of your choosing. If you have any questions, feel free to reach out to us and we'll be happy
-to help. Happy hacking!
-
-## Assignment
-
-Implement a React component that allows managing email addresses. The component displays two lists: available recipients and selected recipients.
-
-<img src="./src/assets/wireframe.png" height="50%" width="50%" />
-
-Use the included `recipientsData.json` file to populate the lists within the component.
-
-### Use cases
-
-As a user, I can
-- See the list of all available recipients. A recipient is either an email or a group of emails sharing the same company domain
-- Select an individual recipient or a company domain. When a company domain is selected, all emails with the domain are added to the selected recipients' list
-- Enter the name of a company into the autocomplete and select a recipient from the available suggestions
-- Enter any email in the autocomplete. If the email passes validation it is possible to add it to the list of available recipients
-- See the list of the selected recipients that are grouped into company and email recipients. The groups are expandable and show the contained members
-- Remove the recipients from the selected list. It is possible to remove an individual email or all emails sharing a domain at once
-
-### The rules
-
-- The component should have a simple and clean design
-- You can use a component library of your choice (we use Chakra UI) 
-- The component should work in the latest Chrome on Mac OS
-- We don't expect a full test coverage, but a couple of unit tests would be nice to have
-- Fork the repo to your own account, make it public and send us the repo url when you are completed. We will
-  clone and run the site on our local.
+here's the note i submitted with my repo URL:
+i used a new branch called `dev` and opened a PR into main (of my forked repo) since i’ve found it’s easier for reviewers to look at a PR to see the exact diff of my code versus the original boilerplate. that (obviously) means you need to (a) take a look at that branch on the remote repo and/or the PR to see my changes and (b) checkout my branch locally to run my code :D. thank you!
