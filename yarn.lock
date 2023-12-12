@@ -4759,11 +4759,12 @@ grommet-icons@^4.10.0, grommet-icons@^4.11.0:
   resolved "https://registry.yarnpkg.com/grommet-icons/-/grommet-icons-4.11.0.tgz#8cb97d24e84a02c1fb23f84c776ffc46b61ae29d"
   integrity sha512-ArXf2XyXmpk5JsQ8NudzNz3mbWv+TeZkPiyog2s9yoNAWTlIr3vzNjr97uon/Xm4Uiq2kiHkvO4i2fG1u6EaDg==
 
-grommet@^2.34.1:
-  version "2.34.1"
-  resolved "https://registry.yarnpkg.com/grommet/-/grommet-2.34.1.tgz#fe86a69e43d7c25cca76e32981a6f17251542f1c"
-  integrity sha512-zZXwURaGoCgprsPug2kDXp5raTBbyajHFpSXby92jfjHlr1DFa8Wa9NR4SuaLDP+LIaKWD/dMtLYw3GSFfs5RQ==
+grommet@2.35.0-alpha.1:
+  version "2.35.0-alpha.1"
+  resolved "https://registry.yarnpkg.com/grommet/-/grommet-2.35.0-alpha.1.tgz#1d82cd4f7e67dae05adf2b4b66193445fd7d066f"
+  integrity sha512-G2AeihZD+C1SfUWzzehuTn7kxhdUWy2rI3zIoN8e+CuvPMyuVsvvcK1UTzoxME6kYQM1ZxjJyTaz8pfp4ytFWQ==
   dependencies:
+    "@emotion/is-prop-valid" "^1.2.1"
     grommet-icons "^4.10.0"
     hoist-non-react-statics "^3.2.0"
     markdown-to-jsx "^7.2.0"
